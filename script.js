@@ -191,13 +191,20 @@ let current = 0;
 const card = document.getElementById("studentCard");
 const counter = document.getElementById("counter");
 
+let direction = "next";
+
 function render() {
     const s = students[current];
 
-    // fade out first
-    card.classList.add("fade-out");
+    // apply direction-based animation
+    if (direction === "next") {
+        card.classList.add("slide-left");
+    } else {
+        card.classList.add("slide-right");
+    }
 
     setTimeout(() => {
+
         card.innerHTML = `
             <img src="${s.image}">
             <div class="student-info">
@@ -209,12 +216,9 @@ function render() {
 
         counter.innerText = `${current + 1}/${students.length}`;
 
-        // force reflow so animation restarts
-        void card.offsetWidth;
-
-        // fade in
-        card.classList.remove("fade-out");
-        card.classList.add("fade-in");
+        // reset animation
+        card.classList.remove("slide-left");
+        card.classList.remove("slide-right");
 
     }, 200);
 }
@@ -222,13 +226,15 @@ function render() {
 render();
 
 document.getElementById("nextBtn").onclick = () => {
-current = (current + 1) % students.length;
-render();
+    direction = "next";
+    current = (current + 1) % students.length;
+    render();
 };
 
 document.getElementById("prevBtn").onclick = () => {
-current = (current - 1 + students.length) % students.length;
-render();
+    direction = "prev";
+    current = (current - 1 + students.length) % students.length;
+    render();
 };
 
 card.classList.add("fade-in");
