@@ -14,19 +14,19 @@ color:#1f2937;
 
 .hero {
     height: 100vh;
+    min-height: 100svh; /* better mobile support */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
 
-    /* BACKGROUND IMAGE */
-    background: 
+    background:
         linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
         url("images/PIC.PNG");
 
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 .hero h1 {
@@ -55,11 +55,11 @@ overflow:hidden;
 box-shadow:0 8px 20px rgba(0,0,0,.08);
 }
 
-#studentCard img{
-width:100%;
-height:420px;
-object-fit:cover;
-background:#e5e7eb;
+#studentCard img {
+    width: 100%;
+    height: auto;
+    max-height: 420px;
+    object-fit: cover;
 }
 
 .student-info{
@@ -188,14 +188,11 @@ transform:translateY(0);
 
 /* MODAL BOX */
 .modal-content {
-    background: white;
-    padding: 20px;
-    border-radius: 20px;
     width: 90%;
     max-width: 400px;
-    text-align: center;
-    position: relative;
-    animation: pop 0.3s ease;
+    max-height: 85vh;
+    overflow-y: auto;
+    border-radius: 20px;
 }
 
 /* IMAGE */
@@ -348,4 +345,35 @@ transform:translateY(0);
 
 #enterBtn:hover{
     transform:translateY(-3px);
+}
+
+/* GLOBAL MOBILE FIX */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Prevent horizontal scrolling */
+body {
+    overflow-x: hidden;
+}
+
+html {
+    font-size: 16px;
+}
+
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .end h1 {
+        font-size: 1.8rem;
+    }
+}
+
+.controls button {
+    width: 48px;
+    height: 48px;
+    font-size: 1rem;
 }
