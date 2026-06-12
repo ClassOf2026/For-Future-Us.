@@ -269,14 +269,14 @@ card.addEventListener("click", () => {
     document.getElementById("modalQuote").innerText = `"${s.quote}"`;
 });
 
-window.addEventListener("click", (e) => {
-    const modal = document.getElementById("studentModal");
+const modal = document.getElementById("studentModal");
 
+modal.addEventListener("click", (e) => {
+    // if user clicks the background (NOT the card)
     if (e.target === modal) {
         modal.style.display = "none";
     }
 });
-
 const mems = document.querySelectorAll(".mem");
 
 mems.forEach(img => {
