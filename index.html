@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Class of 2026</title>
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- WELCOME SCREEN -->
+
+<div id="welcomeScreen">
+
+    <div class="welcome-content">
+        <h1>MPIS</h1>
+        <h1>Class of 2026</h1>
+        <p>For Future Us.</p>
+
+        <button id="enterBtn">Enter</button>
+    </div>
+
+</div>
+
+<!-- BACKGROUND MUSIC -->
+
+<audio id="bgMusic" loop>
+    <source src="music/class2026.mp3" type="audio/mpeg">
+</audio>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+        <h1>Class of 2026</h1>
+    </div>
+
+</section>
+
+<!-- STUDENTS -->
+
+<section class="section">
+
+<h2>Student Archive</h2>
+
+<div id="studentCard"></div>
+
+<div class="controls">
+
+<button id="prevBtn">←</button>
+
+<div id="counter"></div>
+
+<button id="nextBtn">→</button>
+
+</div>
+
+</section>
+
+<!-- ADVISORS -->
+
+<section class="section">
+
+<h2>Advisors</h2>
+
+<div class="advisor-grid">
+
+    <div class="advisor-card">
+        <img src="images/advisors/advisor1.jpg">
+        <h3>Mr. CDave Tugon</h3>
+    </div>
+
+    <div class="advisor-card">
+        <img src="images/advisors/advisor2.jpg">
+        <h3>Advisor 2</h3>
+    </div>
+
+</div>
+
+</section>
+
+<!-- MEMORY GRID -->
+
+<section class="section">
+
+    <h2>Class Moments</h2>
+
+    <div class="memory-showcase">
+        <img src="images/memories/class-moments.PNG" alt="Class Memories">
+    </div>
+
+</section>
+
+<!-- END -->
+
+<section class="end">
+
+<h1>Class of 2026</h1>
+<p>Anyway, don't be a stranger</p>
+
+</section>
+
+<!-- STUDENT MODAL -->
+<div id="studentModal" class="modal">
+    <div class="modal-content">
+        <img id="modalImg" src="">
+        <h2 id="modalName"></h2>
+        <p id="modalTitle"></p>
+        <blockquote id="modalQuote"></blockquote>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
